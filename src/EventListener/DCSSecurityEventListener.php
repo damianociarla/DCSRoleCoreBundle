@@ -3,7 +3,6 @@
 namespace DCS\Role\CoreBundle\EventListener;
 
 use DCS\Role\CoreBundle\Provider\ProviderInterface;
-use DCS\Security\CoreBundle\Authentication\TokenServiceInterface;
 use DCS\Security\CoreBundle\DCSSecurityCoreEvents;
 use DCS\Security\CoreBundle\Event\AuthenticatedTokenEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -16,22 +15,19 @@ class DCSSecurityEventListener implements EventSubscriberInterface
     private $roleProvider;
 
     /**
-     * @var TokenServiceInterface
-     */
-    private $tokenService;
-
-    /**
      * @var string|null
      */
     private $defaultRole;
 
     /**
      * DCSSecurityEventSubscriber constructor.
+     * 
+     * @param ProviderInterface $roleProvider
+     * @param string|null $defaultRole
      */
-    public function __construct(ProviderInterface $roleProvider, TokenServiceInterface $tokenService, $defaultRole = null)
+    public function __construct(ProviderInterface $roleProvider, $defaultRole = null)
     {
         $this->roleProvider = $roleProvider;
-        $this->tokenService = $tokenService;
         $this->defaultRole = $defaultRole;
     }
 

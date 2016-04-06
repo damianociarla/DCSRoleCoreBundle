@@ -16,7 +16,7 @@ class DCSRoleCoreExtension extends Extension
         $container->setParameter('dcs_role.provider_name', $config['provider']);
         $container->setParameter('dcs_role.default_role', $config['default_role']);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('listener.xml');
 //
 //
