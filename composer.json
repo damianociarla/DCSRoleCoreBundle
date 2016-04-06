@@ -1,0 +1,40 @@
+{
+  "name": "dcs/role-core-bundle",
+  "type": "symfony-bundle",
+  "description": "The DCSRoleCoreBundle provides the basic services for the role management",
+  "keywords": ["User","Role","Symfony"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Damiano Ciarla",
+      "email": "damiano.ciarla@gmail.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.9"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5",
+    "dcs/security-core-bundle": "~1.0@dev",
+    "symfony/framework-bundle": "~2.8|~3.0"
+  },
+  "suggest": {
+    "dcs/role-provider-array-bundle": "Management of the roles having the configuration as an array",
+    "dcs/role-provider-orm-bundle": "Management of the roles using Doctrine ORM"
+  },
+  "autoload": {
+    "psr-4": {
+      "DCS\\Role\\CoreBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DCS\\Role\\CoreBundle\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
