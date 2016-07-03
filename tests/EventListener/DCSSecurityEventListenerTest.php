@@ -18,7 +18,7 @@ class DCSSecurityEventListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->roleProvider = $this->getMock(ProviderInterface::class);
+        $this->roleProvider = $this->createMock(ProviderInterface::class);
         $this->roleProvider->expects($this->any())
             ->method('getRole')->will($this->returnCallback([$this, 'getRole']));
     }
@@ -38,7 +38,7 @@ class DCSSecurityEventListenerTest extends \PHPUnit_Framework_TestCase
         $listener = new DCSSecurityEventListener($this->roleProvider, 'ROLE_USER');
         $this->roleProvider->expects($this->once())->method('getRole')->with('ROLE_USER')->willReturn($this->isInstanceOf(Role::class));
 
-        $event = $this->getMock(AuthenticatedTokenEvent::class, [], [new UsernamePasswordToken('johndoe','passwd','default',[])]);
+        $event = $this->createMock(AuthenticatedTokenEvent::class, [], [new UsernamePasswordToken('johndoe','passwd','default',[])]);
         $event->expects($this->once())->method('regenerateUsernamePasswordTokenWithRoles');
 
         $listener->setDefaultRole($event);
@@ -49,7 +49,7 @@ class DCSSecurityEventListenerTest extends \PHPUnit_Framework_TestCase
         $listener = new DCSSecurityEventListener($this->roleProvider);
         $this->roleProvider->expects($this->exactly(0))->method('getRole');
 
-        $event = $this->getMock(AuthenticatedTokenEvent::class, [], [new UsernamePasswordToken('johndoe','passwd','default',[])]);
+        $event = $this->createMock(AuthenticatedTokenEvent::class, [], [new UsernamePasswordToken('johndoe','passwd','default',[])]);
         $event->expects($this->exactly(0))->method('regenerateUsernamePasswordTokenWithRoles');
 
         $listener->setDefaultRole($event);
