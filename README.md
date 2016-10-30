@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/damianociarla/DCSRoleCoreBundle.svg?branch=master)](https://travis-ci.org/damianociarla/DCSRoleCoreBundle) [![Coverage Status](https://coveralls.io/repos/github/damianociarla/DCSRoleCoreBundle/badge.svg?branch=master)](https://coveralls.io/github/damianociarla/DCSRoleCoreBundle?branch=master)
+
 # DCSRoleCoreBundle
 
 This bundle provides the basic services for the role management. Also it provides an option to set a default user role during the authentication process.
