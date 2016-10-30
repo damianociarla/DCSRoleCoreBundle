@@ -16,7 +16,9 @@
   "require-dev": {
     "phpunit/phpunit": "^5",
     "dcs/security-core-bundle": "~1.0@dev",
-    "symfony/framework-bundle": "~2.8|~3.0"
+    "symfony/framework-bundle": "~2.8|~3.0",
+    "satooshi/php-coveralls": "~1.0",
+    "phpunit/phpcov": "3.*"
   },
   "suggest": {
     "dcs/role-provider-array-bundle": "Management of the roles having the configuration as an array",
