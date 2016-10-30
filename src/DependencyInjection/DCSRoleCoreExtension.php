@@ -18,9 +18,5 @@ class DCSRoleCoreExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('listener.xml');
-//
-//
-//        $loader->load('listener.xml');
-//        $loader->load('repository.xml');
     }
 }
