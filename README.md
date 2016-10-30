@@ -51,4 +51,4 @@ Add the following configuration to your `config.yml`.
 
 # Reporting an issue or a feature request
 
-Issues and feature requests are tracked in the [Github issue tracker](https://github.com/damianociarla/DCSSecurityCoreBundle/issues).
+Issues and feature requests are tracked in the [Github issue tracker](https://github.com/damianociarla/DCSRoleCoreBundle/issues).
